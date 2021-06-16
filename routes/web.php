@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\LoginController::class, 'index'])->name('login.page');
+Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+
+Route::get('/registration', [\App\Http\Controllers\RegistrationController::class, 'index'])->name('registration.page');
+Route::post('/register', [\App\Http\Controllers\RegistrationController::class, 'register'])->name('register');
+Route::put('/change/pass', [\App\Http\Controllers\RegistrationController::class, 'changePass'])->name('change.pass');
+Route::get('/change/pass/page', [\App\Http\Controllers\RegistrationController::class, 'gotoChangePass'])->name('change.pass.page');
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
