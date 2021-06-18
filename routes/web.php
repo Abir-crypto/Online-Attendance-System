@@ -23,3 +23,6 @@ Route::put('/change/pass', [\App\Http\Controllers\RegistrationController::class,
 Route::get('/change/pass/page', [\App\Http\Controllers\RegistrationController::class, 'gotoChangePass'])->name('change.pass.page');
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/course/page', [\App\Http\Controllers\CourseController::class, 'index'])->name('course.page');
+Route::post('/add/course', [\App\Http\Controllers\CourseController::class, 'addCourse'])->name('add.course');

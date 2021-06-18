@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Faculty;
 use App\Models\Student;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,11 +17,25 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $student = new Student();
-        $student->first_name = 'Abdullah All';
-        $student->last_name = 'Abir';
-        $student->email = 'abir@gmail.com';
-        $student->password = '1234';
-        $student->save();
+        $user = Faculty::find(1);
+
+        $dt1 = Carbon::now();
+        $dt2 = Carbon::now();
+
+        $dt1->hour = 16;
+        $dt1->minute = 30;
+        $dt2->hour = 17;
+        $dt2->minute = 50;
+
+
+        $user->courses()->create([
+           'code'=>'CSE4033',
+            'title'=>'Web and Internet Programming',
+            'section'=>'3',
+            'day1'=>1,
+            'day2'=>3,
+            'start'=>$dt1,
+            'end'=>$dt2,
+        ]);
     }
 }

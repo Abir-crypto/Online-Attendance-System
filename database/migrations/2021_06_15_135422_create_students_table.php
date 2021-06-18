@@ -15,10 +15,12 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('name');
+            $table->string('sid')->unique();
             $table->string('email')->unique();
-            $table->text('password');
+            $table->string('batch');
+            $table->string('dept');
+            $table->text('password')->default(\Illuminate\Support\Facades\Hash::make(1234));
             $table->boolean('changedPassword')->default(false);
             $table->timestamps();
         });

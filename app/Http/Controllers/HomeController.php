@@ -18,11 +18,14 @@ class HomeController extends Controller
     public function index(){
         if(session()->has('student_id')){
             $user = Student::where('id', session()->get('student_id'))->first();
-            return view('main', compact('user'));
+            $courses = $user->courses()->get();
+            return view('home', compact('user', 'courses'));
         }
         else if(session()->has('faculty_id')){
             $user = Faculty::where('id', session()->get('faculty_id'))->first();
-            return view('main', compact('user'));
+            $courses = $user->courses()->get();
+
+            return view('home', compact('user', 'courses'));
         }
     }
 }

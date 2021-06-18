@@ -22,16 +22,24 @@
             @method('post')
             <div class="container center-align">
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="first_name" class="validate">
-                    <label for="last_name">First Name</label>
+                    <input id="last_name" type="text" name="name" class="validate">
+                    <label for="last_name">Full Name</label>
                 </div>
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="last_name" class="validate">
-                    <label for="last_name">Last Name</label>
+                    <input id="last_name" type="text" name="sid" class="validate">
+                    <label for="last_name">Student ID(only for students)</label>
                 </div>
                 <div class="input-field row">
                     <input id="last_name" type="text" name="email" class="validate">
                     <label for="last_name">Email</label>
+                </div>
+                <div class="input-field row">
+                    <input id="last_name" type="text" name="batch" class="validate">
+                    <label for="last_name">Batch(only for students)</label>
+                </div>
+                <div class="input-field row">
+                    <input id="last_name" type="text" name="dept" class="validate">
+                    <label for="last_name">Department</label>
                 </div>
                 <p class="flow-text">
                     <label>

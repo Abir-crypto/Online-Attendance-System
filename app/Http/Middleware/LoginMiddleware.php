@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Faculty;
 use App\Models\Student;
 use Closure;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class LoginMiddleware
             }
         }
         else if(session()->has('faculty_id')){
-            $user = Student::where('id', session()->get('faculty_id'))->first();
+            $user = Faculty::where('id', session()->get('faculty_id'))->first();
             if($user->changedPassword == false){
                 return redirect()->route('change.pass.page');
             }

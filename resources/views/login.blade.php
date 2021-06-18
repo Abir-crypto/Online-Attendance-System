@@ -26,7 +26,7 @@
                         <label for="last_name">Email</label>
                     </div>
                     <div class="input-field row">
-                        <input id="last_name" type="text" name="password" class="validate">
+                        <input id="last_name" type="password" name="password" class="validate">
                         <label for="last_name">Password</label>
                     </div>
                     <p class="flow-text">

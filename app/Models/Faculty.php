@@ -9,5 +9,9 @@ class Faculty extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first_name', 'last_name', 'email', 'password', 'changedPassword'];
+    protected $fillable = ['name', 'dept', 'email', 'changedPassword'];
+
+    public function courses(){
+        return $this->hasMany(Course::class);
+    }
 }
