@@ -18,9 +18,8 @@ class RegistrationController extends Controller
 
     public function register(Request $request){
         if($request->group == 0){
-            $faculty = Faculty::create($request->all(), ['password'=> Hash::make(1234)]);
-            $faculty->password = Hash::make(1234);
-            $faculty->save();
+           Faculty::create($request->all(), ['password'=> Hash::make(1234)]);
+        
         }
         else if($request->group == 1){
 

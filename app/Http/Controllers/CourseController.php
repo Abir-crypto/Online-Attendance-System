@@ -33,6 +33,7 @@ class CourseController extends Controller
             'title'=>$request->title,
             'code'=>$request->code,
             'section'=>$request->section,
+            'startDate'=>$request->date,
             'day1'=>$dowMap[$request->day1],
             'day2'=>$dowMap[$request->day2],
             'start'=>$start,
@@ -40,5 +41,10 @@ class CourseController extends Controller
         ]);
 
         return redirect()->back()->with('msg', 'Course Added to your profile');
+    }
+
+    public function showCourseStudent(Course $course){
+        $students = $course->students()->get();
+        return view('courseStudent',compact('students'));
     }
 }

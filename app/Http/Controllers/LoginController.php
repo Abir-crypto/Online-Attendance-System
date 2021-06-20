@@ -19,7 +19,7 @@ class LoginController extends Controller
     public function login(Request $request){
         if($request->group == 1){
             $student = Student::where('email', $request->email)->first();
-            if($student==null or Hash::check($student->password, $request->password)){
+            if($student==null or !Hash::check($request->password, $student->password)){
                 return redirect()->back();
             }
             $request->session()->put('student_id', $student->id);
@@ -27,7 +27,7 @@ class LoginController extends Controller
         }
         else if($request->group == 0){
             $student = Faculty::where('email', $request->email)->first();
-            if($student==null or Hash::check($student->password, $request->password)){
+            if($student==null or !Hash::check($request->password, $student->password)){
                 return redirect()->back();
             }
             $request->session()->put('faculty_id', $student->id);

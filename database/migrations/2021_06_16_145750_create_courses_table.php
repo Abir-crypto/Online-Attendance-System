@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('code');
             $table->string('title');
             $table->string('section');
+            $table->date('StartDate');
             $table->integer('day1');
             $table->integer('day2');
             $table->time('start');

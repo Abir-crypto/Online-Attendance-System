@@ -13,7 +13,7 @@
                 <ul class="collection with-header">
                     <li class="collection-header"><h4>My Courses</h4></li>
                     @foreach($courses as $course)
-                        <li class="collection-item">{{$course->title}} --Section: {{$course->section}}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></li>
+                        <li class="collection-item">{{$course->title}} --Section: {{$course->section}}<a href="{{route('course.student',$course->id)}}" class="secondary-content"><i class="material-icons">send</i></a></li>
                     @endforeach
                 </ul>
                 <a href="{{route('course.page')}}" class="btn waves-effect waves-light amber darken-2">Add Courses</a>
@@ -24,7 +24,7 @@
                 <ul class="collection with-header">
                     <li class="collection-header"><h4>My Courses</h4></li>
                     @foreach($courses as $course)
-                        <li class="collection-item">{{$course->title}} --Section: {{$course->section}}<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></li>
+                        <li class="collection-item">{{$course->title}} --Section: {{$course->section}}<a href="{{route('attendance.page',$course->id)}}" class="secondary-content"><i class="material-icons">send</i></a></li>
                     @endforeach
                 </ul>
 {{--                <a href="{{route('course.page')}}" class="btn waves-effect waves-light amber darken-2">Add Courses</a>--}}

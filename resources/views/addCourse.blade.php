@@ -19,6 +19,10 @@
                     <label for="last_name">Section</label>
                 </div>
                 <div class="input-field row">
+                    <input id="last_name" type="date" name="date" class="validate">
+                    <label for="last_name">Date</label>
+                </div>
+                <div class="input-field row">
                     <input id="last_name" type="text" name="day1" class="validate">
                     <label for="last_name">Class Day 1</label>
                 </div>

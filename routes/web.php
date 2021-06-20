@@ -26,3 +26,8 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Route::get('/course/page', [\App\Http\Controllers\CourseController::class, 'index'])->name('course.page');
 Route::post('/add/course', [\App\Http\Controllers\CourseController::class, 'addCourse'])->name('add.course');
+Route::get('/course/{course}/student', [\App\Http\Controllers\CourseController::class, 'showCourseStudent'])->name('course.student');
+
+
+Route::get('/attendance/{course}/page', [\App\Http\Controllers\AttendanceController::class, 'index'])->name('attendance.page');
+Route::get('/attendance/{course}/submit', [\App\Http\Controllers\AttendanceController::class, 'submitAttendance'])->name('attendance.submit');

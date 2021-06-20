@@ -22,7 +22,7 @@
             <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="badges.html">Components</a></li>
+{{--                <li><a href="badges.html">Components</a></li>--}}
                 <li><a href="{{route('logout')}}">Logout</a></li>
             </ul>
         </div>
