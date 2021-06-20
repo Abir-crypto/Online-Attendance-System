@@ -12,6 +12,6 @@ class Student extends Model
     protected $fillable = ['name', 'sid', 'dept', 'batch', 'email', 'changedPassword'];
 
     public function courses(){
-        return $this->belongsToMany(Course::class);
+        return $this->belongsToMany(Course::class)->withPivot(['lastAttended', 'attendanceCount']);
     }
 }

@@ -14,40 +14,41 @@
 
     <title>Login</title>
 </head>
-<body>
+<body class="deep-purple darken-4 white-text">
     <div class="container" style="margin-top: 200px">
         <div class="container">
+            <x-alert/>
             <form action="{{route('login')}}">
                 @csrf
 
                 <div class="container center-align">
                     <div class="input-field row">
-                        <input id="last_name" type="text" name="email" class="validate">
+                        <input id="last_name" type="text" name="email" class="validate white-text">
                         <label for="last_name">Email</label>
                     </div>
                     <div class="input-field row">
-                        <input id="last_name" type="password" name="password" class="validate">
+                        <input id="last_name" type="password" name="password" class="validate white-text">
                         <label for="last_name">Password</label>
                     </div>
                     <p class="flow-text">
                         <label>
                             <input name="group" type="radio" value="1" />
-                            <span>Student</span>
+                            <span class="white-text">Student</span>
                         </label>
                     </p>
                     <p class="flow-text">
                         <label>
                             <input name="group" type="radio" value="0"/>
-                            <span>Faculty</span>
+                            <span class="white-text">Faculty</span>
                         </label>
                     </p>
                     <div class="row">
-                        <input type="submit" class="btn waves-effect waves-light blue" value="Login">
+                        <input type="submit" class="btn waves-effect waves-light indigo lighten-5" value="Login">
                     </div>
                 </div>
             </form>
             <div class="center-align">
-                <a href="{{route('registration.page')}}" class="flow-text">Register here</a>
+                <a href="{{route('registration.page')}}" class="flow-text white-text">Register here</a>
             </div>
         </div>
     </div>

@@ -15,18 +15,19 @@
     <title>Login</title>
 </head>
 <body>
-<div class="container" style="margin-top: 200px">
-    <div class="container">
+<div class="container deep-purple darken-4 white-text hoverable" style="margin-top: 200px; padding: 100px; width: 30%; border-radius: 6%">
+    <div class="">
+        <x-alert/>
         <form action="{{route('change.pass')}}" method="post">
             @csrf
             @method('put')
-            <div class="container center-align">
+            <div class="center-align">
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="password" class="validate">
+                    <input id="last_name" type="text" name="password" class="validate white-text">
                     <label for="last_name">Password</label>
                 </div>
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="confirm" class="validate">
+                    <input id="last_name" type="text" name="confirm" class="validate white-text">
                     <label for="last_name">Confirm Password</label>
                 </div>
                 <div class="row">

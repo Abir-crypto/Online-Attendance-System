@@ -2,7 +2,9 @@
 @section('content')
     <div class="container" >
         <div class="container">
+            <x-alert/>
             <div class="container center-item" style="display: grid;place-items: center">
+
                 <h3>Attendance Submission</h3>
                 <h4>{{$course->title}}</h4>
                 @if($isClassAvailable==true)

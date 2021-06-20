@@ -20,7 +20,7 @@ class LoginController extends Controller
         if($request->group == 1){
             $student = Student::where('email', $request->email)->first();
             if($student==null or !Hash::check($request->password, $student->password)){
-                return redirect()->back();
+                return redirect()->back()->with('msg', 'Information not Matched');
             }
             $request->session()->put('student_id', $student->id);
             return redirect()->route('home', compact('student'));
@@ -28,12 +28,12 @@ class LoginController extends Controller
         else if($request->group == 0){
             $student = Faculty::where('email', $request->email)->first();
             if($student==null or !Hash::check($request->password, $student->password)){
-                return redirect()->back();
+                return redirect()->back()->with('msg', 'Information not Matched');
             }
             $request->session()->put('faculty_id', $student->id);
             return redirect()->route('home', compact('student'));
         }
-        return redirect()->back();
+        return redirect()->back()->with('msg', 'Something went wrong');
     }
 
     public function logout(Request $request)

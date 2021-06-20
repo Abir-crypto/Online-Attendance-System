@@ -16,14 +16,14 @@
 
     <title>O A S</title>
 </head>
-<body>
+<body class="grey darken-3">
     <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
+        <div class="nav-wrapper blue lighten-5 ">
+            <a href="#" class="brand-logo black-text">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('home')}}" class="black-text hoverable">Home</a></li>
 {{--                <li><a href="badges.html">Components</a></li>--}}
-                <li><a href="{{route('logout')}}">Logout</a></li>
+                <li><a href="{{route('logout')}}" class="black-text hoverable">Logout</a></li>
             </ul>
         </div>
     </nav>

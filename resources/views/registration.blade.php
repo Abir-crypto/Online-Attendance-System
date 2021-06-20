@@ -14,47 +14,51 @@
 
     <title>Registration</title>
 </head>
-<body>
+<body class="deep-purple darken-4 white-text">
+<div style="margin: auto;width: 30%">
+    <x-alert/>
+</div>
 <div class="container" style="margin-top: 200px">
     <div class="container">
+
         <form action="{{route('register')}}" method="post">
             @csrf
             @method('post')
             <div class="container center-align">
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="name" class="validate">
+                    <input id="last_name" type="text" name="name" class="validate white-text">
                     <label for="last_name">Full Name</label>
                 </div>
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="sid" class="validate">
+                    <input id="last_name" type="text" name="sid" class="validate white-text">
                     <label for="last_name">Student ID(only for students)</label>
                 </div>
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="email" class="validate">
+                    <input id="last_name" type="text" name="email" class="validate white-text">
                     <label for="last_name">Email</label>
                 </div>
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="batch" class="validate">
+                    <input id="last_name" type="text" name="batch" class="validate white-text">
                     <label for="last_name">Batch(only for students)</label>
                 </div>
                 <div class="input-field row">
-                    <input id="last_name" type="text" name="dept" class="validate">
+                    <input id="last_name" type="text" name="dept" class="validate white-text">
                     <label for="last_name">Department</label>
                 </div>
-                <p class="flow-text">
+                <p class="flow-text white-text">
                     <label>
                         <input name="group" type="radio" value="1" />
-                        <span>Student</span>
+                        <span class="white-text">Student</span>
                     </label>
                 </p>
                 <p class="flow-text">
                     <label>
                         <input name="group" type="radio" value="0"/>
-                        <span>Faculty</span>
+                        <span class="white-text">Faculty</span>
                     </label>
                 </p>
                 <div class="row">
-                    <input type="submit" class="btn waves-effect waves-light blue" value="Register">
+                    <input type="submit" class="btn waves-effect waves-light blue lighten-5" value="Register">
                 </div>
             </div>
         </form>

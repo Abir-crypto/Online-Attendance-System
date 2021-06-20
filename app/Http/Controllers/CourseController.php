@@ -20,7 +20,7 @@ class CourseController extends Controller
     }
     public function addCourse(Request $request){
         $faculty = Faculty::find(session()->get('faculty_id'));
-        $dowMap = array('Sun'=>1, 'Mon'=>2, 'Tue'=>3, 'Wed'=>4, 'Thu'=>5, 'Fri'=>6, 'Sat'=>7);
+        $dowMap = array('Sun'=>0, 'Mon'=>1, 'Tue'=>2, 'Wed'=>3, 'Thu'=>4, 'Fri'=>5, 'Sat'=>6);
         $start = Carbon::now();
         $start->hour = $request->startHour;
         $start->minute = $request->startMin;
@@ -45,6 +45,22 @@ class CourseController extends Controller
 
     public function showCourseStudent(Course $course){
         $students = $course->students()->get();
-        return view('courseStudent',compact('students'));
+//        dd($students);
+//        $startDate = $course->StartDate;
+//        $today = Carbon::today();
+//        $days = $today->diff($startDate, true)->days;
+//        $totalClass = 0;
+//
+//        for($i = Carbon::parse($startDate); $i <= $today; $i->modify('+1 day')){
+//            if($i->dayOfWeek == $course->day1){
+//                $totalClass = $totalClass+1;
+//            }
+//            if($i->dayOfWeek == $course->day2){
+//                $totalClass = $totalClass+1;
+//            }
+//
+//        }
+//        $present = $students->pivot->attendanceCount;
+        return view('courseStudent',compact('students', 'course'));
     }
 }

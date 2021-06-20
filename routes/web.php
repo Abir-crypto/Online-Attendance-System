@@ -31,3 +31,4 @@ Route::get('/course/{course}/student', [\App\Http\Controllers\CourseController::
 
 Route::get('/attendance/{course}/page', [\App\Http\Controllers\AttendanceController::class, 'index'])->name('attendance.page');
 Route::get('/attendance/{course}/submit', [\App\Http\Controllers\AttendanceController::class, 'submitAttendance'])->name('attendance.submit');
+Route::get('/get/{student}/{course}/attendance', [\App\Http\Controllers\AttendanceController::class, 'seeStudentReport'])->name('student.report');
