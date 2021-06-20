@@ -19,12 +19,12 @@ class RegistrationController extends Controller
 
     public function register(RegistrationRequest $request){
         if($request->group == 0){
-           Faculty::create($request->all(), ['password'=> Hash::make(1234)]);
+           Faculty::create($request->all());
 
         }
         else if($request->group == 1){
 
-            Student::create($request->all(), ['password' => Hash::make(1234)]);
+            Student::create($request->all());
         }
 
         return redirect()->route('login.page')->with('msg', 'Your Default Password is "1234"');

@@ -45,22 +45,6 @@ class CourseController extends Controller
 
     public function showCourseStudent(Course $course){
         $students = $course->students()->get();
-//        dd($students);
-//        $startDate = $course->StartDate;
-//        $today = Carbon::today();
-//        $days = $today->diff($startDate, true)->days;
-//        $totalClass = 0;
-//
-//        for($i = Carbon::parse($startDate); $i <= $today; $i->modify('+1 day')){
-//            if($i->dayOfWeek == $course->day1){
-//                $totalClass = $totalClass+1;
-//            }
-//            if($i->dayOfWeek == $course->day2){
-//                $totalClass = $totalClass+1;
-//            }
-//
-//        }
-//        $present = $students->pivot->attendanceCount;
         return view('courseStudent',compact('students', 'course'));
     }
 }
